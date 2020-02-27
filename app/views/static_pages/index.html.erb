@@ -1,0 +1,21 @@
+<div class="container">
+  <section class="global_musicapp"> 
+    <section class="album-result">
+      <h3>- *Country Name* -</h3>
+      <br />
+      <div class="container">
+        <%= image_tag(@album.images.first["url"], class: "album-image") %>
+      </div>
+      <p class="album-name"><%= @album.name.titleize %></p>
+      <br />
+<!--         <p>by <%= @album.artists(@name) %></p> -->
+      <h3>The first song on this album is</h3>
+      <br />
+      <p><%= link_to @album.tracks.first.name, @album.tracks.first.preview_url, class: "song-link" %></p>
+      <br />
+      <br />
+      <%= link_to 'Continue your search', root_path, class: "home-link" %>
+      <hr class="under-link" />
+    </section>
+  </section>
+</div>
