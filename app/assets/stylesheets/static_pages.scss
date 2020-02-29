@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oxanium&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body {
   background-color: #121212;
@@ -12,31 +14,64 @@ body {
   justify-content: center;
 }
 
-header {
+h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: bold;
   font-variant: small-caps;
   font-family: 'Oxanium';
   color: #E5E5E5;
   letter-spacing: 0.3rem;
   text-shadow: 2px 1px #B2B2B2;
+  margin: 2% 0 0;
 }
 
-h1 {
-  margin: 0;
+.sub-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-family: 'Oxanium';
+  color: #E5E5E5;
+  letter-spacing: 0.3rem;
+
 }
 
 .under-header {
   width: 80%;
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(18, 99, 149, 0), rgba(18, 99, 149, 0.75), rgba(18, 99, 149, 0));
+  background-image: linear-gradient(to right, rgba(41, 149, 157, 0), rgba(41, 149, 157, 0.75), rgba(41, 149, 157, 0));
 }
 
 .global_musicapp {
   text-align: center;
   text-size: 2rem;
+}
+
+.search-label {
+  font-size: 1.5rem;
+}
+
+.select_dropdown {
+  width: 35%;
+  font-size: 1rem;
+  padding: .5rem;
+}
+
+.option {
+  margin: .5rem;
+}
+
+.button {
+  padding: .7rem;
+  font-size: 1rem;
+  background-color: #29959D;
+  color: #E5E5E5;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  border-color: #B2B2B2;
+  letter-spacing: 0.15rem;
 }
 
 .hidden {
@@ -48,8 +83,8 @@ h1 {
   display: block;
 }
 
-.song-link {
-  color: rgb(18, 99, 149);
+.song {
+  color: #29959D;
   text-decoration: none;
   font-size: 2rem;
   font-weight: bold;
@@ -66,9 +101,9 @@ h1 {
 }
 
 .github-link {
-  color: rgb(18, 99, 149);
+  color: #29959D;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: .75rem;
 }
 
 .under-link {
@@ -83,4 +118,5 @@ footer {
   color: #E5E5E5;
   text-align: center;
   padding: 0 0 4%;
+  font-weight: .75rem;
 }

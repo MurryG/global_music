@@ -1,0 +1,14 @@
+require 'rails_helper'
+
+RSpec.describe StaticPagesController, type: :controller do
+  describe "static_pages#index action" do
+    it "should successfully show the page" do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
+    it "should use the submitted params when user submits a country" do
+      get :index, params[:search_params] = 'FR'
+      expect(page).to have_text("- FR -")
+    end
+  end
+end

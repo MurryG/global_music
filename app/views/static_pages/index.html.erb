@@ -1,21 +1,59 @@
-<div class="container">
-  <section class="global_musicapp"> 
-    <section class="album-result">
-      <h3>- *Country Name* -</h3>
-      <br />
-      <div class="container">
-        <%= image_tag(@album.images.first["url"], class: "album-image") %>
-      </div>
-      <p class="album-name"><%= @album.name.titleize %></p>
-      <br />
-<!--         <p>by <%= @album.artists(@name) %></p> -->
-      <h3>The first song on this album is</h3>
-      <br />
-      <p><%= link_to @album.tracks.first.name, @album.tracks.first.preview_url, class: "song-link" %></p>
-      <br />
-      <br />
-      <%= link_to 'Continue your search', root_path, class: "home-link" %>
-      <hr class="under-link" />
+<div class='container'>
+  <section class='global_musicapp'>
+    <header class='sub-header'>
+      <h4>Discover music from around the world</h4>
+    </header>
+
+    <section class='choose-country'>
+      <%= form_tag(root_path, method: "get") do %>
+        <div class='custom-select'>
+          <br />
+          <%= select_tag(:search_params, options_for_select(
+            [
+              ["Pick a Country", "", {class: 'hidden'}],
+              ["Australia", "AU", {class: 'option'}],
+              ["Brazil", "BR", {class: 'option'}],
+              ["France", "FR", {class: 'option'}],
+              ["India", "IN", {class: 'option'}],
+              ["Italy", "IT", {class: 'option'}],
+              ["South Africa", "ZA", {class: 'option'}],
+              ["Spain", "ES", {class: 'option'}],
+              ["Unites States", "US", {class: 'option'}]
+              ], selected: "", disabled: ""
+            ), {:class => 'select_dropdown'}
+          ) %>
+          <%= submit_tag "Search", name: nil, class: 'button' %>
+        </div>
+      <% end %>
     </section>
   </section>
 </div>
+
+
+
+<% if @album.present? %>
+  <div class='container'>
+    <section class='global_musicapp'> 
+      <section class='album-result'>
+        <h3>- <%= @written_country %> -</h3>
+        <div class='container'>
+          <%= image_tag(@album.images.first["url"], class: 'album-image') %>
+        </div>
+        <p class='album-name'><%= @album.name.titleize %></p>
+        <p>by <%= @album.artists.first.name %></p>
+        <h3>The first song on this album is</h3>
+        <% if @album.tracks.first.preview_url %>
+          <p><%= link_to(@album.tracks.first.preview_url, target: '_blank', class: 'song') do %>
+            <%= @album.tracks.first.name %><i class='fas fa-play-circle'></i>
+          <% end %>
+        <% else %>
+          <p class='song'><%= @album.tracks.first.name %></p>
+        <% end %>
+      </section>
+    </section>
+  </div>
+<% end %>
+
+<footer>
+  A simple Ruby on Rails application, built by <%= link_to "Mercedes Gasser", "https://github.com/murryg", class: 'github-link' %>
+</footer>
