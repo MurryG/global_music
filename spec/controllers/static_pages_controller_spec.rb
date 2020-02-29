@@ -6,9 +6,10 @@ RSpec.describe StaticPagesController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
-    it "should use the submitted params when user submits a country" do
-      get :index, params[:search_params] = 'FR'
-      expect(page).to have_text("- FR -")
+    it "should not consider @album to be true until @chosen_country is true" do
+      @chosen_country == nil
+      expect(@album). to eq(nil)
     end
   end
+
 end

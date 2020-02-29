@@ -9,11 +9,15 @@ class StaticPagesController < ApplicationController
     end
 
     country_hash = {
+      'AU' => 'Australia',
+      'BR' => 'Brazil',
       'FR' => 'France',
+      'IN' => 'India',
       'IT' => 'Italy',
+      'ZA' => 'South Africa',
       'BR' => 'Brazil',
       'ES' => 'Spain',
-      'IN' => 'India'
+      'US' => 'United States'
     }
     @written_country = country_hash[@chosen_country]
   end
