@@ -2,6 +2,9 @@
   <section class='global_musicapp'>
     <header class='sub-header'>
       <h4>Discover music from around the world</h4>
+      <p style="text-align: center;">
+        A simple Ruby on Rails application, built by <%= link_to "Mercedes Gasser", "https://github.com/murryg", class: 'github-link' %>
+      </p>
     </header>
 
     <section class='choose-country'>
@@ -26,10 +29,6 @@
         </div>
       <% end %>
     </section>
-
-    <p style="text-align: center;">
-      A simple Ruby on Rails application, built by <%= link_to "Mercedes Gasser", "https://github.com/murryg", class: 'github-link' %>
-    </p>
   </section>
 </div>
 
@@ -44,7 +43,7 @@
           <%= image_tag(@album.images.first["url"], class: 'album-image') %>
         </div>
         <p class='album-name'><%= @album.name.titleize %></p>
-        <p>by <%= @album.artists.first.name %></p>
+        <p>by&nbsp;&nbsp;<%= @album.artists.first.name %></p>
         <h3>The first song on this album is</h3>
         <% if @album.tracks.first.preview_url %>
           <p><%= link_to(@album.tracks.first.preview_url, target: '_blank', class: 'song') do %>

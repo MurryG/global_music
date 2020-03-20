@@ -26,6 +26,10 @@ h1 {
   margin: 2% 0 0;
 }
 
+h4 {
+  margin-bottom: 20px;
+}
+
 .sub-header {
   text-align: center;
   font-size: 2rem;
@@ -34,7 +38,13 @@ h1 {
   font-family: 'Oxanium';
   color: #E5E5E5;
   letter-spacing: 0.3rem;
+  margin-bottom: 20px;
+}
 
+.sub-header p {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
 }
 
 .under-header {
